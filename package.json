@@ -16,6 +16,9 @@
     "src": "./src"
   },
   "dependencies": {
+    "@types/lodash-es": "^4.17.3",
+    "@types/react": "^16.9.2",
+    "@types/react-dom": "^16.9.0",
     "lodash": "^4.17.15",
     "lodash-es": "^4.17.15",
     "react": "^16.9.0",
@@ -24,6 +27,7 @@
   "devDependencies": {
     "@babel/core": "^7.6.2",
     "@babel/preset-env": "^7.6.2",
-    "parcel-bundler": "^1.12.3"
+    "parcel-bundler": "^1.12.3",
+    "typescript": "^3.6.3"
   }
 }
