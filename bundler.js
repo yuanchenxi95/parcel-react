@@ -1,8 +1,12 @@
 const Bundler = require('parcel-bundler');
 const Path = require('path');
+const rimraf = require('rimraf');
 
 // Single entrypoint file location:
 const entryFiles = Path.join(__dirname, './src/index.html');
+
+const outDir = './dist';
+const clearPath = glob => rimraf(glob, () => Promise.resolve());
 // OR: Multiple files with globbing (can also be .js)
 // const entryFiles = './src/*.js';
 // OR: Multiple files in an array
@@ -12,7 +16,7 @@ process.env.NODE_ENV = 'production';
 
 // Bundler options
 const options = {
-  outDir: './dist', // The out directory to put the build files in, defaults to dist
+  outDir: outDir, // The out directory to put the build files in, defaults to dist
   outFile: 'index.html', // The name of the outputFile
   publicUrl: './', // The url to serve on, defaults to '/'
   watch: false, // Whether to watch the files and rebuild them on change, defaults to process.env.NODE_ENV !== 'production'
@@ -30,6 +34,8 @@ const options = {
 };
 
 (async function() {
+  await clearPath(outDir);
+
   // Initializes a bundler using the entrypoint location and options provided
   const bundler = new Bundler(entryFiles, options);
 
