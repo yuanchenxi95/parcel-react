@@ -16,7 +16,7 @@
     "src": "./src"
   },
   "dependencies": {
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "lodash-es": "^4.17.15",
     "react": "^16.9.0",
     "react-dom": "^16.9.0"
